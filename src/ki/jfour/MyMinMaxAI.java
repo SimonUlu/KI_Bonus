@@ -5,6 +5,7 @@ import java.util.*;
 public class MyMinMaxAI extends AI{
 
 
+    // maybe also undo the move in function minmax -> still need to check what is the effect of this
     @Override
     public void start(Board b) {
 
@@ -108,7 +109,7 @@ public class MyMinMaxAI extends AI{
             }
 
         }
-        return alpha;
+        return alpha-depth;
     }
 
 
@@ -148,13 +149,16 @@ public class MyMinMaxAI extends AI{
             boardWidth += 1;
         }
         boolean[] checkCol = new boolean[boardWidth];
-
+        Board initBoardState = b;
         // stop loop if column has already been checked
         for (int i = 0; i < boardState.length; i++) {
             for (int j = 0; j < boardState[0].length; j++) {
                 if (!checkCol[j] && boardState[i][j] == Player.NONE) {
                     b = b.executeMove(new Move(j));
                     int moveValue = minmax(b, 0, false);
+                    //System.out.println(moveValue);
+                    //System.out.println(j);
+
                     if (moveValue > bestVal) {
                         // place in right col (possibly change i to j) not to sure
                         //System.out.println("Change");
@@ -162,13 +166,19 @@ public class MyMinMaxAI extends AI{
                         bestVal = moveValue;
                     }
                     checkCol[j] = true;
+                    // set back to initial board state
+                    b = initBoardState;
                 }
             }
         }
-        //System.out.printf("The best move's value is %d: ", bestVal);
-        //System.out.println(); // only to break-line
-        //System.out.printf("The best move row is %d: ", bestMoveRow);
-        //System.out.println(); // only to break-line
+        /*
+        System.out.printf("The best move's value is %d: ", bestVal);
+        System.out.println(); // only to break-line
+        System.out.printf("The best move row is %d: ", bestMoveRow);
+        System.out.println(); // only to break-line
+        System.out.println(b.executeMove(new Move(bestMoveRow)));
+        */
+
         return new Move(bestMoveRow);
     }
 
@@ -184,6 +194,20 @@ public class MyMinMaxAI extends AI{
 
     public static void main(String[] args) {
 
+        /*
+        Board b = new Board(4, 6);
+        b = b.executeMove(new Move(0));
+        b = b.executeMove(new Move(0));
+        b = b.executeMove(new Move(2));
+        b = b.executeMove(new Move(1));
+        b = b.executeMove(new Move(1));
+        b = b.executeMove(new Move(2));
+        System.out.println(b);
+
+        Move move = new MyMinMaxAI().findBestMove(b);
+        System.out.println(move);
+
+        */
         int i = 0;
 
         while (i < 10) {
