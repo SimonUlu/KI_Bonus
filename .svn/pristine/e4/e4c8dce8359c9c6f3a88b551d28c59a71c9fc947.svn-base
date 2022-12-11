@@ -1,0 +1,13 @@
+package ki.jfour;
+
+public class MyMinMaxAI extends AI{
+    @Override
+    public void start(Board b) {
+
+    }
+
+    @Override
+    public String getDescription() {
+        return null;
+    }
+}
