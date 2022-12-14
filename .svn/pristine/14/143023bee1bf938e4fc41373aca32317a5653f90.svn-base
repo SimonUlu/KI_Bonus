@@ -107,14 +107,14 @@ public class MyMCTSAI extends AI {
                 //System.out.println("Instant win");
                 return 10000;
             }
-            return Math.max(100 - (step*20), 20);
+            return Math.max(100 - (step*10), 20);
         }
         if (b.getWinner() == opponent) {
             if (step == 1) {
                 //System.out.println("Instant loss");
                 return -10000;
             }
-            return Math.min(-100 + (step*20), -20);
+            return Math.min(-100 + (step*10), -20);
         }
         return 0;
     }

@@ -92,8 +92,8 @@ public class MyMCTSAI extends AI {
     }
 
 
-
-    /// not so simple heuristic
+    /*
+    /// problem sometimes player = Red sometimes player = blues
     public int evaluate(Board b, int step, Player player) {
 
         Player opponent = Player.RED;
@@ -107,21 +107,20 @@ public class MyMCTSAI extends AI {
                 //System.out.println("Instant win");
                 return 10000;
             }
-            return Math.max(100 - (step*20), 20);
+            return Math.max(100 - (step*10), 20);
         }
         if (b.getWinner() == opponent) {
             if (step == 1) {
                 //System.out.println("Instant loss");
                 return -10000;
             }
-            return Math.min(-100 + (step*20), -20);
+            return Math.min(-100 + (step*10), -20);
         }
         return 0;
     }
 
+     */
 
-    /*
-    // simple heurstic
     public int evaluate(Board b, int step, Player player) {
         Player opponent = Player.RED;
         //System.out.println(b.getCurrentPlayer());
@@ -129,15 +128,21 @@ public class MyMCTSAI extends AI {
             opponent = Player.BLUE;
         }
         if (b.getWinner() == player) {
+            if (step == 1) {
+                //System.out.println("Instant win");
+                return 10000;
+            }
             return 50;
         }
         if (b.getWinner() == opponent) {
+            if (step == 1) {
+                //System.out.println("Instant loss");
+                return -10000;
+            }
             return -50;
         }
         return 0;
     }
-    */
-
 
 
 

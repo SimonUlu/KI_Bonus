@@ -149,7 +149,7 @@ public class MyMinMaxAI extends AI{
 
         for (int i = 0; i < boardState[0].length; i++) {
             boardWidth += 1;
-            if (boardState[boardHeight-1][i] == Player.NONE) {
+            if (boardState[boardHeight][i] == Player.NONE) {
                 empty += 1;
             }
         }
@@ -159,7 +159,7 @@ public class MyMinMaxAI extends AI{
         }
         */
 
-        //System.out.println(empty);
+        System.out.println(empty);
         if (empty + 4 >= boardWidth) {
 
             Move gameMove = new Move(Math.round(boardWidth / 2) + 1);

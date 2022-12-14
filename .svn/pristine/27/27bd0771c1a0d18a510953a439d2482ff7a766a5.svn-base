@@ -159,7 +159,7 @@ public class MyMinMaxAI extends AI{
         }
         */
 
-        //System.out.println(empty);
+        System.out.println(empty);
         if (empty + 4 >= boardWidth) {
 
             Move gameMove = new Move(Math.round(boardWidth / 2) + 1);

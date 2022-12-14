@@ -13,8 +13,7 @@ public class MyMCTSAI extends AI {
     @Override
     public void start(Board b) {
         // make Method find best move
-        Player player = b.getCurrentPlayer();
-        findBestMonteMove(b, player);
+        findBestMonteMove(b);
     }
 
 
@@ -45,7 +44,7 @@ public class MyMCTSAI extends AI {
 
 
     /// function that tries to find the best move by evaluating every possible move
-    public Move findBestMonteMove(Board b, Player player) {
+    public Move findBestMonteMove(Board b) {
 
         // get Current Board State
         Player[][] boardState = b.getState();
@@ -66,8 +65,8 @@ public class MyMCTSAI extends AI {
                 if (!checkCol[j] && boardState[i][j] == Player.NONE) { // if not only thrown in col && field = empty
                     b = b.executeMove(new Move(j));
                     //winsTotal = new int[boardWidth];
-                    for(int k = 0; k < 100; k++) {
-                        winsTotal[j] += playRandomGame(b, player);
+                    for(int k = 0; k < 80; k++) {
+                        winsTotal[j] += playRandomGame(b);
                     }
                     checkCol[j] = true;
                     b = beforeBoard;
@@ -81,63 +80,23 @@ public class MyMCTSAI extends AI {
         return new Move(selectedRow);
     }
 
-    public int playRandomGame(Board b, Player player) {
+    public int playRandomGame(Board b) {
 
-        int step = 0;
         while(b.getWinner() == Player.NONE && b.possibleMoves().size() > 0) {
             b = b.executeMove(makeRandomMove(b));
-            step += 1;
         }
-        return evaluate(b, step, player);
+        return evaluate(b);
     }
 
-
-
-    /// not so simple heuristic
-    public int evaluate(Board b, int step, Player player) {
-
-        Player opponent = Player.RED;
-        //System.out.println(b.getCurrentPlayer());
-        if (player == Player.RED) {
-            opponent = Player.BLUE;
+    public int evaluate(Board b) {
+        if (b.getWinner() == Player.RED) {
+            return +10;
         }
-
-        if (b.getWinner() == player) {
-            if (step == 1) {
-                //System.out.println("Instant win");
-                return 10000;
-            }
-            return Math.max(100 - (step*20), 20);
-        }
-        if (b.getWinner() == opponent) {
-            if (step == 1) {
-                //System.out.println("Instant loss");
-                return -10000;
-            }
-            return Math.min(-100 + (step*20), -20);
+        if (b.getWinner() == Player.BLUE) {
+            return -10;
         }
         return 0;
     }
-
-
-    /*
-    // simple heurstic
-    public int evaluate(Board b, int step, Player player) {
-        Player opponent = Player.RED;
-        //System.out.println(b.getCurrentPlayer());
-        if (player == Player.RED) {
-            opponent = Player.BLUE;
-        }
-        if (b.getWinner() == player) {
-            return 50;
-        }
-        if (b.getWinner() == opponent) {
-            return -50;
-        }
-        return 0;
-    }
-    */
-
 
 
 
@@ -153,6 +112,30 @@ public class MyMCTSAI extends AI {
 
 
 
+    /*
+    public static void main(String[] args) {
+
+
+        Board b = new Board(4, 6);
+        b = b.executeMove(new Move(0));
+        b = b.executeMove(new Move(0));
+        b = b.executeMove(new Move(1));
+        b = b.executeMove(new Move(1));
+        b = b.executeMove(new Move(2));
+        b = b.executeMove(new Move(2));
+        System.out.println(b);
+
+        Move move = new MyMinMaxAI().findBestMove(b);
+        System.out.println(move);
+
+
+        Board b = new Board(5, 7);
+        new MyMCTSAI().start(b);
+
+
+
+    }
+    */
 
 
 
@@ -163,4 +146,26 @@ public class MyMCTSAI extends AI {
 }
 
 
+/* Old Loop of function findNextBestMove
+        for (int i = 0; i < boardState.length; i++) {
+            for (int j = 0; j < boardState[i].length; j++) {
+                if (boardState[i][j] == Player.NONE) {
+                    Board startBoard = b;
+                    // execute Move in col j
+                    b = b.executeMove(new Move(j));
+                    int moveValue = minmax(b, 0, true); /// is Max maybe switching
+                    System.out.println("First Iteration finished");
 
+                    //undo the move
+                    //b = startBoard;
+
+                    if (moveValue > bestVal) {
+                        // place in right col (possibly change i to j) not to sure
+                        //System.out.println("Change");
+                        bestMoveRow = j;
+                        bestVal = moveValue;
+                    }
+                }
+            }
+        }
+         */

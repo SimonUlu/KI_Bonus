@@ -13,8 +13,7 @@ public class MyMCTSAI extends AI {
     @Override
     public void start(Board b) {
         // make Method find best move
-        Player player = b.getCurrentPlayer();
-        findBestMonteMove(b, player);
+        findBestMonteMove(b);
     }
 
 
@@ -45,7 +44,7 @@ public class MyMCTSAI extends AI {
 
 
     /// function that tries to find the best move by evaluating every possible move
-    public Move findBestMonteMove(Board b, Player player) {
+    public Move findBestMonteMove(Board b) {
 
         // get Current Board State
         Player[][] boardState = b.getState();
@@ -67,7 +66,7 @@ public class MyMCTSAI extends AI {
                     b = b.executeMove(new Move(j));
                     //winsTotal = new int[boardWidth];
                     for(int k = 0; k < 100; k++) {
-                        winsTotal[j] += playRandomGame(b, player);
+                        winsTotal[j] += playRandomGame(b);
                     }
                     checkCol[j] = true;
                     b = beforeBoard;
@@ -81,63 +80,26 @@ public class MyMCTSAI extends AI {
         return new Move(selectedRow);
     }
 
-    public int playRandomGame(Board b, Player player) {
+    public int playRandomGame(Board b) {
 
         int step = 0;
         while(b.getWinner() == Player.NONE && b.possibleMoves().size() > 0) {
             b = b.executeMove(makeRandomMove(b));
             step += 1;
         }
-        return evaluate(b, step, player);
+        return evaluate(b, step);
     }
 
+    public int evaluate(Board b, int step) {
 
-
-    /// not so simple heuristic
-    public int evaluate(Board b, int step, Player player) {
-
-        Player opponent = Player.RED;
-        //System.out.println(b.getCurrentPlayer());
-        if (player == Player.RED) {
-            opponent = Player.BLUE;
+        if (b.getWinner() == Player.RED) {
+            return 100 - (step*5);
         }
-
-        if (b.getWinner() == player) {
-            if (step == 1) {
-                //System.out.println("Instant win");
-                return 10000;
-            }
-            return Math.max(100 - (step*20), 20);
-        }
-        if (b.getWinner() == opponent) {
-            if (step == 1) {
-                //System.out.println("Instant loss");
-                return -10000;
-            }
-            return Math.min(-100 + (step*20), -20);
+        if (b.getWinner() == Player.BLUE) {
+            return -100 + (step*5);
         }
         return 0;
     }
-
-
-    /*
-    // simple heurstic
-    public int evaluate(Board b, int step, Player player) {
-        Player opponent = Player.RED;
-        //System.out.println(b.getCurrentPlayer());
-        if (player == Player.RED) {
-            opponent = Player.BLUE;
-        }
-        if (b.getWinner() == player) {
-            return 50;
-        }
-        if (b.getWinner() == opponent) {
-            return -50;
-        }
-        return 0;
-    }
-    */
-
 
 
 
