@@ -13,7 +13,7 @@ public class MyMCTSAI extends AI {
     @Override
     public void start(Board b) {
         // make Method find best move
-        findBestMonteMove(b);
+        findBestMove(b);
     }
 
 
@@ -44,7 +44,7 @@ public class MyMCTSAI extends AI {
 
 
     /// function that tries to find the best move by evaluating every possible move
-    public Move findBestMonteMove(Board b) {
+    public Move findBestMove(Board b) {
 
         // get Current Board State
         Player[][] boardState = b.getState();

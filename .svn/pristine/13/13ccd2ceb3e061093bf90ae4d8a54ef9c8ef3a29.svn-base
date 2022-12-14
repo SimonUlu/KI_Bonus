@@ -12,8 +12,9 @@ public class MyMCTSAI extends AI {
     // maybe also undo the move in function minmax -> still need to check what is the effect of this
     @Override
     public void start(Board b) {
+
         // make Method find best move
-        findBestMonteMove(b);
+        findBestMove(b);
     }
 
 
@@ -38,13 +39,13 @@ public class MyMCTSAI extends AI {
                 bestRow = i;
             }
         }
-        //System.out.println(bestValue);
+        System.out.println(bestValue);
         return bestRow;
     }
 
 
     /// function that tries to find the best move by evaluating every possible move
-    public Move findBestMonteMove(Board b) {
+    public Move findBestMove(Board b) {
 
         // get Current Board State
         Player[][] boardState = b.getState();
@@ -64,7 +65,7 @@ public class MyMCTSAI extends AI {
                 if (!checkCol[j] && boardState[i][j] == Player.NONE) { // if not only thrown in col && field = empty
                     b = b.executeMove(new Move(j));
                     //winsTotal = new int[boardWidth];
-                    for(int k = 0; k < 80; k++) {
+                    for(int k = 0; k < 50; k++) {
                         winsTotal[j] += playRandomGame(b);
                     }
                     checkCol[j] = true;
@@ -74,7 +75,7 @@ public class MyMCTSAI extends AI {
             }
         }
         int selectedRow = getBestValue(winsTotal);
-        //System.out.println(Arrays.toString(winsTotal));
+        System.out.println(Arrays.toString(winsTotal));
         setBestMove(new Move(selectedRow));
         return new Move(selectedRow);
     }

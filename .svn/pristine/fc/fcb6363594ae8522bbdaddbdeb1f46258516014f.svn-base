@@ -46,14 +46,14 @@ public class MyMinMaxAI extends AI{
 
 
     /// function to simulate the opponent -- choose random move of possible game Moves
-
+    /*
     public Move makeRandomMove(Board b) {
         List<Move> possibleMoves = b.possibleMoves();
         Random random = new Random();
         return possibleMoves.get(random.nextInt(possibleMoves.size()));
     }
 
-
+     */
 
 
     // function to evaluate the current board state
@@ -86,7 +86,7 @@ public class MyMinMaxAI extends AI{
             return 0;
         }
 
-        if(depth == 4) {
+        if(depth == 3) {
             return 0;
         }
 
@@ -98,7 +98,7 @@ public class MyMinMaxAI extends AI{
 
             // get Board State as array and loop over all possible cells and make move for every opportunity
             Player[][] boardState = b.getState();
-            //Board beforeBoard = b; // not undo move
+            //Board beforeBoard = b;
             for (int i = 0; i < boardState.length; i++) {
                 for (int j = 0; j < boardState[i].length; j++) {
                     if (boardState[i][j] == Player.NONE) {
@@ -139,12 +139,31 @@ public class MyMinMaxAI extends AI{
         int empty = 0;
         Player[][] boardState = b.getState(); // [[Spalte 1, Splate2, ..], [], [], ]
 
+        //
+
+        // new loop only check columns not every single position
+        // create array that has width of my board
         int boardWidth = 0;
 
         for (int i = 0; i < boardState[0].length; i++) {
             boardWidth += 1;
+            if (boardState[0][i] == Player.RED || boardState[0][i] == Player.BLUE) {
+                empty += 1;
+            }
         }
-        setBestMove(new Move(3));
+
+        if (empty <6 ) {
+            setBestMove(new Move(6));
+            return new Move(6);
+        }
+        if (empty <4 ) {
+            setBestMove(new Move(4));
+            return new Move(4);
+        }
+        if (empty <2 ) {
+            setBestMove(new Move(5));
+            return new Move(5);
+        }
 
         boolean[] checkCol = new boolean[boardWidth]; // array mit [baordbreite] spalten
         Board initBoardState = b;
@@ -154,7 +173,12 @@ public class MyMinMaxAI extends AI{
                 if (!checkCol[j] && boardState[i][j] == Player.NONE) { // if not only thrown in col && field = empty
                     b = b.executeMove(new Move(j));
                     int moveValue = minmax(b, 0, false);
+                    //System.out.println(moveValue);
+                    //System.out.println(j);
+
                     if (moveValue > bestVal) {
+                        // place in right col (possibly change i to j) not to sure
+                        //System.out.println("Change");
                         bestMoveRow = j; //
                         bestVal = moveValue;
                     }
@@ -165,7 +189,13 @@ public class MyMinMaxAI extends AI{
                 }
             }
         }
-        setBestMove(new Move(bestMoveRow));
+        /* For testing purpose -> when you want to check finishing abilities
+        System.out.printf("The best move's value is %d: ", bestVal);
+        System.out.println(); // only to break-line
+        System.out.printf("The best move row is %d: ", bestMoveRow);
+        System.out.println(); // only to break-line
+        System.out.println(b.executeMove(new Move(bestMoveRow)));
+        */
         return new Move(bestMoveRow);
     }
 

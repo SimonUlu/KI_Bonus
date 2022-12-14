@@ -13,7 +13,7 @@ public class MyMCTSAI extends AI {
     @Override
     public void start(Board b) {
         // make Method find best move
-        findBestMonteMove(b);
+        findBestMove(b);
     }
 
 
@@ -44,7 +44,7 @@ public class MyMCTSAI extends AI {
 
 
     /// function that tries to find the best move by evaluating every possible move
-    public Move findBestMonteMove(Board b) {
+    public Move findBestMove(Board b) {
 
         // get Current Board State
         Player[][] boardState = b.getState();
@@ -64,7 +64,7 @@ public class MyMCTSAI extends AI {
                 if (!checkCol[j] && boardState[i][j] == Player.NONE) { // if not only thrown in col && field = empty
                     b = b.executeMove(new Move(j));
                     //winsTotal = new int[boardWidth];
-                    for(int k = 0; k < 80; k++) {
+                    for(int k = 0; k < 50; k++) {
                         winsTotal[j] += playRandomGame(b);
                     }
                     checkCol[j] = true;

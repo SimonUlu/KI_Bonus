@@ -64,7 +64,7 @@ public class MyMCTSAI extends AI {
                 if (!checkCol[j] && boardState[i][j] == Player.NONE) { // if not only thrown in col && field = empty
                     b = b.executeMove(new Move(j));
                     //winsTotal = new int[boardWidth];
-                    for(int k = 0; k < 80; k++) {
+                    for(int k = 0; k < 40; k++) {
                         winsTotal[j] += playRandomGame(b);
                     }
                     checkCol[j] = true;
