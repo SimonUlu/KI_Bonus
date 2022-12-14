@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11ec98dc-b04a-45dd-8265-33b1731c427a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/ki/jfour/MyMCTSAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ki/jfour/MyMCTSAI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ki/jfour/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ki/jfour/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ki/jfour/MyMinMaxAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ki/jfour/MyMinMaxAI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,13 +113,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670319422083</updated>
-    </task>
-    <task id="LOCAL-00025">
-      <created>1671017456027</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1671017456027</updated>
     </task>
     <task id="LOCAL-00026">
       <created>1671017658029</created>
@@ -456,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671037066027</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074">
+      <created>1671037152027</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1671037152027</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

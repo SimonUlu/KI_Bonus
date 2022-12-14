@@ -87,7 +87,7 @@ public class MyMinMaxAI extends AI{
             return 0;
         }
 
-        if(depth == 5) {
+        if(depth == 7) {
             return 0;
         }
 
@@ -160,14 +160,14 @@ public class MyMinMaxAI extends AI{
         */
 
         //System.out.println(empty);
-        if (empty + 4 >= boardWidth) {
+        if (empty + 2 >= boardWidth) {
 
             Move gameMove = new Move(Math.round(boardWidth / 2) + 1);
             if (empty + 2 >= boardWidth) {
                 gameMove = new Move(Math.round(boardWidth / 2-1));
             }
             if (empty >= boardWidth) {
-                gameMove = new Move(Math.round(boardWidth / 2));
+                gameMove = new Move(0);
             }
             setBestMove(gameMove);
             return gameMove;

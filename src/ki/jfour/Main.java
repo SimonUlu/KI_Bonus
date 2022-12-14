@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        Board b = new Board(7, 7);
+        Board b = new Board(6, 7);
 
         while (b.possibleMoves().size() > 0 && b.getWinner() == Player.NONE) {
 
