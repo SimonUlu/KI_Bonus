@@ -139,7 +139,7 @@ public class MyMinMaxAI extends AI{
         int empty = 0;
         Player[][] boardState = b.getState(); // [[Spalte 1, Splate2, ..], [], [], ]
 
-        //
+
 
         // new loop only check columns not every single position
         // create array that has width of my board

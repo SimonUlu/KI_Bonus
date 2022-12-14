@@ -1,8 +1,8 @@
 package ki.jfour;
 
-import java.util.*;
+import java.util.List;
 
-public class MyMinMaxAI extends AI{
+public class MyMCTSAI extends AI {
 
 
     // init max depth && make max_depth ==
@@ -90,8 +90,6 @@ public class MyMinMaxAI extends AI{
             return 0;
         }
 
-
-
         if (isMax) {
             // set value to -infinite
             alpha  = Integer.MIN_VALUE;
@@ -118,7 +116,7 @@ public class MyMinMaxAI extends AI{
             for (int i = 0; i < boardState.length; i++) {
                 for (int j = 0; j < boardState[i].length; j++) {
                     if (boardState[i][j] == Player.NONE) {
-                       /* ? not sure if beforeBoard state is neccessary ? */
+                        /* ? not sure if beforeBoard state is neccessary ? */
                         b = b.executeMove(new Move(j)); // b = b after game move
                         alpha = Math.min(alpha, minmax(b, depth +1 ,!isMax));
                         //undo the move
@@ -139,7 +137,7 @@ public class MyMinMaxAI extends AI{
         int empty = 0;
         Player[][] boardState = b.getState(); // [[Spalte 1, Splate2, ..], [], [], ]
 
-        //
+        //setBestMove(new Move(2));
 
         // new loop only check columns not every single position
         // create array that has width of my board
@@ -151,7 +149,6 @@ public class MyMinMaxAI extends AI{
                 empty += 1;
             }
         }
-
         if (empty <6 ) {
             setBestMove(new Move(6));
         }
@@ -161,6 +158,8 @@ public class MyMinMaxAI extends AI{
         if (empty <2 ) {
             setBestMove(new Move(5));
         }
+
+
 
         boolean[] checkCol = new boolean[boardWidth]; // array mit [baordbreite] spalten
         Board initBoardState = b;

@@ -15,7 +15,30 @@ public class MyMCTSAI extends AI {
 
 
 
-        findBestMove(b);
+        while (b.possibleMoves().size() > 0 && b.getWinner() == Player.NONE) {
+            if (b.getCurrentPlayer() == Player.BLUE && b.getWinner() == Player.NONE) {
+                Move randomMove = makeRandomMove(b);
+                b = b.executeMove(randomMove);
+                System.out.println(b);
+            }
+            if (b.possibleMoves().size() == 0) {
+                System.out.println("Draw");
+                break;
+
+            }
+            if (b.getCurrentPlayer() == Player.RED && b.getWinner() == Player.NONE) {
+                Move move = findBestMove(b);
+                b = b.executeMove(move);
+                System.out.println(b);
+            }
+            if (b.getWinner() == Player.BLUE) {
+                System.out.println(b.getWinner());
+            }
+            if (b.getWinner() == Player.RED) {
+                System.out.println(b.getWinner());
+            }
+
+        }
 
 
     }
@@ -58,7 +81,7 @@ public class MyMCTSAI extends AI {
         for (int i = 0; i < boardState[0].length; i++) {
             boardWidth += 1;
         }
-        setBestMove(new Move(boardWidth/2));
+
         // create Array to check if column has already been searched and stop loop if already been searched
         boolean[] checkCol = new boolean[boardWidth];
         int[] winsTotal = new int[boardWidth];
@@ -79,7 +102,6 @@ public class MyMCTSAI extends AI {
         }
         int selectedRow = getBestValue(winsTotal);
         System.out.println(Arrays.toString(winsTotal));
-        setBestMove(new Move(selectedRow));
         return new Move(selectedRow);
     }
 
@@ -115,10 +137,11 @@ public class MyMCTSAI extends AI {
 
 
 
-    /*
     public static void main(String[] args) {
 
 
+
+        /*
         Board b = new Board(4, 6);
         b = b.executeMove(new Move(0));
         b = b.executeMove(new Move(0));
@@ -132,13 +155,15 @@ public class MyMCTSAI extends AI {
         System.out.println(move);
 
 
+         */
+
+
         Board b = new Board(5, 7);
         new MyMCTSAI().start(b);
 
 
 
     }
-    */
 
 
 

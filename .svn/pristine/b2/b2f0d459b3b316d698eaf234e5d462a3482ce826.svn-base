@@ -1,0 +1,51 @@
+package ki.jfour;
+
+import java.util.List;
+
+public class MyMCTSAI extends AI{
+
+    @Override
+    public void start(Board b) {
+
+    }
+
+    @Override
+    public String getDescription() {
+        return "Simon Unterlugauer";
+    }
+
+    // function to evaluate the current board state
+    public int evaluate(Board b) {
+        if (b.getWinner() == Player.RED) {
+            return +10;
+        }
+        if (b.getWinner() == Player.BLUE) {
+            return -10;
+        }
+        return 0;
+    }
+
+    public int playRandomGame(Board b) {
+
+
+    }
+
+
+   public Move findBestMove(Board b) {
+       Player[][] boardState = b.getState();
+       int boardWidth = 0;
+       for (int i = 0; i < boardState[0].length; i++) {
+           boardWidth += 1;
+       }
+       boolean[] checkCol = new boolean[boardWidth];
+       for (int i = 0; i < boardState.length; i++) {
+           for (int j = 0; j < boardState[i].length; j++) {
+               if (!checkCol[j] && boardState[i][j] == Player.NONE) {
+                   b = b.executeMove(new Move(j));
+               }
+           }
+       }
+   }
+
+
+}

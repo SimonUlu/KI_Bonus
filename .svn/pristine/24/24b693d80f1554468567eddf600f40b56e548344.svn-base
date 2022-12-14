@@ -86,11 +86,9 @@ public class MyMinMaxAI extends AI{
             return 0;
         }
 
-        if(depth == 3) {
+        if(depth == 4) {
             return 0;
         }
-
-
 
         if (isMax) {
             // set value to -infinite
@@ -139,7 +137,7 @@ public class MyMinMaxAI extends AI{
         int empty = 0;
         Player[][] boardState = b.getState(); // [[Spalte 1, Splate2, ..], [], [], ]
 
-        //
+        setBestMove(new Move(3));
 
         // new loop only check columns not every single position
         // create array that has width of my board
@@ -152,15 +150,7 @@ public class MyMinMaxAI extends AI{
             }
         }
 
-        if (empty <6 ) {
-            setBestMove(new Move(6));
-        }
-        if (empty <4 ) {
-            setBestMove(new Move(4));
-        }
-        if (empty <2 ) {
-            setBestMove(new Move(5));
-        }
+
 
         boolean[] checkCol = new boolean[boardWidth]; // array mit [baordbreite] spalten
         Board initBoardState = b;
