@@ -5,6 +5,8 @@ import java.util.*;
 public class MyMinMaxAI extends AI{
 
 
+    // init max depth && make max_depth ==
+
     // maybe also undo the move in function minmax -> still need to check what is the effect of this
     @Override
     public void start(Board b) {
@@ -74,6 +76,10 @@ public class MyMinMaxAI extends AI{
             return 0;
         }
 
+        if(depth == 5) {
+            return 0;
+        }
+
         if (isMax) {
             // set value to -infinite
             alpha  = Integer.MIN_VALUE;
@@ -104,6 +110,7 @@ public class MyMinMaxAI extends AI{
                         alpha = Math.min(alpha, minmax(b, depth +1 ,!isMax));
                         //undo the move
                         //b = beforeBoard;
+
                     }
                 }
             }
@@ -119,30 +126,9 @@ public class MyMinMaxAI extends AI{
         int bestMoveRow = -1;
         Player[][] boardState = b.getState();
 
-        /* Old Loop
-        for (int i = 0; i < boardState.length; i++) {
-            for (int j = 0; j < boardState[i].length; j++) {
-                if (boardState[i][j] == Player.NONE) {
-                    Board startBoard = b;
-                    // execute Move in col j
-                    b = b.executeMove(new Move(j));
-                    int moveValue = minmax(b, 0, true); /// is Max maybe switching
-                    System.out.println("First Iteration finished");
 
-                    //undo the move
-                    //b = startBoard;
 
-                    if (moveValue > bestVal) {
-                        // place in right col (possibly change i to j) not to sure
-                        //System.out.println("Change");
-                        bestMoveRow = j;
-                        bestVal = moveValue;
-                    }
-                }
-            }
-        }
-         */
-
+        // new loop only check columns not every single position
         // create array that has width of my board
         int boardWidth = 0;
         for (int i = 0; i < boardState[0].length; i++) {
@@ -171,14 +157,13 @@ public class MyMinMaxAI extends AI{
                 }
             }
         }
-        /*
+        /* For testing purpose -> when you want to check finishing abilities
         System.out.printf("The best move's value is %d: ", bestVal);
         System.out.println(); // only to break-line
         System.out.printf("The best move row is %d: ", bestMoveRow);
         System.out.println(); // only to break-line
         System.out.println(b.executeMove(new Move(bestMoveRow)));
         */
-
         return new Move(bestMoveRow);
     }
 
@@ -211,7 +196,7 @@ public class MyMinMaxAI extends AI{
         int i = 0;
 
         while (i < 10) {
-            Board b = new Board(4, 6);
+            Board b = new Board(5, 7);
             new MyMinMaxAI().start(b);
             i++;
         }
@@ -219,3 +204,28 @@ public class MyMinMaxAI extends AI{
 
 
 }
+
+
+/* Old Loop of function findNextBestMove
+        for (int i = 0; i < boardState.length; i++) {
+            for (int j = 0; j < boardState[i].length; j++) {
+                if (boardState[i][j] == Player.NONE) {
+                    Board startBoard = b;
+                    // execute Move in col j
+                    b = b.executeMove(new Move(j));
+                    int moveValue = minmax(b, 0, true); /// is Max maybe switching
+                    System.out.println("First Iteration finished");
+
+                    //undo the move
+                    //b = startBoard;
+
+                    if (moveValue > bestVal) {
+                        // place in right col (possibly change i to j) not to sure
+                        //System.out.println("Change");
+                        bestMoveRow = j;
+                        bestVal = moveValue;
+                    }
+                }
+            }
+        }
+         */
