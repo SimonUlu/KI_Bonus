@@ -11,8 +11,6 @@ public class MyMinMaxAI extends AI{
     @Override
     public void start(Board b) {
 
-        findBestMove(b);
-        /*
         while (b.possibleMoves().size() > 0 && b.getWinner() == Player.NONE) {
             if (b.getCurrentPlayer() == Player.BLUE && b.getWinner() == Player.NONE) {
                 Move randomMove = makeRandomMove(b);
@@ -37,8 +35,6 @@ public class MyMinMaxAI extends AI{
             }
 
         }
-
-         */
     }
 
 
@@ -180,7 +176,6 @@ public class MyMinMaxAI extends AI{
     }
 
 
-    /*
     public static void main(String[] args) {
 
 
@@ -197,7 +192,7 @@ public class MyMinMaxAI extends AI{
         Move move = new MyMinMaxAI().findBestMove(b);
         System.out.println(move);
 
-
+        */
 
         Board b = new Board(5, 7);
         new MyMinMaxAI().start(b);
@@ -205,9 +200,6 @@ public class MyMinMaxAI extends AI{
 
 
     }
-
-     */
-
 
 
 }
