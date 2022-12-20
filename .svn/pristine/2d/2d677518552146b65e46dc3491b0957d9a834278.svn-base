@@ -71,7 +71,7 @@ public class MyMCTSAI extends AI {
             }
             b = beforeBoard;
         }
-        //System.out.println(Arrays.toString(winsTotal));
+        System.out.println(Arrays.toString(winsTotal));
         int selectedRow = getBestValue(winsTotal);
         //System.out.println(Arrays.toString(winsTotal));
         setBestMove(new Move(selectedRow));

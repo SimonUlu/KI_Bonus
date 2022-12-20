@@ -8,8 +8,7 @@ public class MyMinMaxAI extends AI{
 
     public void start(Board b) {
         Player player = b.getCurrentPlayer();
-        // depth = 5
-        findBestMove(b, 5, Integer.MIN_VALUE, Integer.MAX_VALUE, true, player);
+        findBestMove(b, 3, Integer.MIN_VALUE, Integer.MAX_VALUE, true, player);
     }
 
 
@@ -24,16 +23,16 @@ public class MyMinMaxAI extends AI{
         if (b.getWinner() == myPlayer) {
             score += 10000;
         } else if (b.getThreeRower() == myPlayer) {
-            score += 50;
+            score += 10;
         } else if (b.getTwoRower() == myPlayer) {
-            score += 5;
+            score += 3;
         }
         if (b.getWinner() == opponentPlayer) {
             score -= -10000;
         } else if (b.getThreeRower() == opponentPlayer) {
-            score -= 50;
+            score -= 10;
         } else if(b.getTwoRower() == opponentPlayer) {
-            score -= 5;
+            score -= 3;
         }
 
         return score;
@@ -74,8 +73,9 @@ public class MyMinMaxAI extends AI{
                 }
             }
             if (depth == 0) {
-                //System.out.println(b);
+                System.out.println(b);
                 return new int[]{evaluate(b, myPlayer), -1};
+
             }
 
         }
@@ -92,12 +92,9 @@ public class MyMinMaxAI extends AI{
                     setBestMove(bestMove);
                 }
                 alpha = Math.max(alpha, value);
-                /*
                 if (alpha >= beta) {
                     break;
                 }
-
-                 */
             }
             return new int[]{value, bestMove.column};
         }
@@ -114,12 +111,9 @@ public class MyMinMaxAI extends AI{
                     setBestMove(bestMove);
                 }
                 alpha = Math.min(beta, value);
-                /*
                 if (alpha >= beta) {
                     break;
                 }
-
-                 */
             }
             return new int[]{value, bestMove.column};
         }

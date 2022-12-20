@@ -31,10 +31,10 @@ public class MyMCTSAI extends AI {
 
 
     public int getBestValue(int[] array) {
-        int bestValue = Integer.MIN_VALUE;
-        int bestRow = -1;
+        int bestValue = 0;
+        int bestRow = 0;
         for(int i = 0; i < array.length; i++) {
-            if (array[i] > bestValue && array[i] != 0) {
+            if (array[i] > bestValue) {
                 bestValue = array[i];
                 bestRow = i;
             }
@@ -60,18 +60,19 @@ public class MyMCTSAI extends AI {
         List <Move> possibleMoves = b.possibleMoves();
 
         // create Array to check if column has already been searched and stop loop if already been searched
-        //boolean[] checkCol = new boolean[boardWidth];
+        boolean[] checkCol = new boolean[boardWidth];
         int[] winsTotal = new int[boardWidth];
         Board beforeBoard = b;
         for (Move possibleMove: possibleMoves) {
+            // if not only thrown in col && field = empty
             b = b.executeMove(possibleMove);
             //winsTotal = new int[boardWidth];
-            for(int k = 0; k < 60; k++) {
+            for(int k = 0; k < 100; k++) {
                 winsTotal[possibleMove.column] += playRandomGame(b, player);
             }
+            checkCol[possibleMove.column] = true;
             b = beforeBoard;
         }
-        //System.out.println(Arrays.toString(winsTotal));
         int selectedRow = getBestValue(winsTotal);
         //System.out.println(Arrays.toString(winsTotal));
         setBestMove(new Move(selectedRow));
@@ -108,7 +109,7 @@ public class MyMCTSAI extends AI {
             return Math.max(100 - (step*20), 20);
         }
         if (b.getWinner() == opponent) {
-            if (step == 1) {
+            if (step == 0) {
                 //System.out.println("Instant loss");
                 return -10000;
             }

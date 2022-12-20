@@ -14,7 +14,7 @@ public class Main {
                 System.out.println(b.getWinner());
             }
 
-            //System.out.println("Min Maxs Turn");
+            System.out.println("Min Maxs Turn");
 
             int gameMoveMinMax = new MyMinMaxAI().findBestMove(b, 5, Integer.MIN_VALUE, Integer.MAX_VALUE, true, Player.RED)[1];
             Move gameMove = new Move(gameMoveMinMax);
@@ -22,7 +22,7 @@ public class Main {
 
             b = b.executeMove(gameMove);
             System.out.println(b);
-            //System.out.println("Montes Turn");
+            System.out.println("Montes Turn");
 
             Move gameMoveMCT = new MyMCTSAI().findBestMonteMove(b, Player.BLUE);
             b = b.executeMove(gameMoveMCT);
