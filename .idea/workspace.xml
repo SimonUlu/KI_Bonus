@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11ec98dc-b04a-45dd-8265-33b1731c427a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ki/jfour/SecondMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ki/jfour/TestMinMaxAI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ki/jfour/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ki/jfour/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ki/jfour/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ki/jfour/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ki/jfour/MyMinMaxAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ki/jfour/MyMinMaxAI.java" afterDir="false" />
     </list>
@@ -75,9 +78,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SecondMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ki.jfour.SecondMain" />
+      <module name="ki1_bonus" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ki.jfour.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.SecondMain" />
         <item itemvalue="Application.MyMinMaxAI" />
         <item itemvalue="Application.MyMCTSAI" />
       </list>

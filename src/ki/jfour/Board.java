@@ -143,6 +143,166 @@ public class Board {
     return Player.NONE;
   }
 
+
+  /// function to get 3 chips in a row
+  private Player getDiagonalThree315Row() {
+    for (int y = height - 1; y >= 3; y--) {
+      for (int x = width - 1; x >= 3; x--) {
+        if (board[y][x] != Player.NONE &&
+                board[y][x] == board[y - 1][x - 1] &&
+                board[y][x] == board[y - 2][x - 2] &&
+                board[y - 3][x - 3] == Player.NONE
+        )
+        {
+          return board[y][x];
+        }
+      }
+    }
+    return Player.NONE;
+  }
+
+  private Player getDiagonalThree45Row() {
+    for (int y = height - 1; y >= 3; y--) {
+      for (int x = 0; x < width - 3; x++) {
+        if (board[y][x] != Player.NONE &&
+                board[y][x] == board[y - 1][x + 1] &&
+                board[y][x] == board[y - 2][x + 2] &&
+                board[y - 3][x + 3] == Player.NONE
+        )
+        {
+          return board[y][x];
+        }
+      }
+    }
+
+    return Player.NONE;
+  }
+
+
+  private Player getHorizontalThreeRow() {
+    for (int x = 0; x < width - 3; x++) {
+      for (int y = height - 1; y >= 0; y--) {
+        if (board[y][x] != Player.NONE &&
+                board[y][x] == board[y][x + 1] &&
+                board[y][x] == board[y][x + 2] &&
+                board[y][x + 3] == Player.NONE)
+        {
+          return board[y][x];
+        }
+      }
+    }
+
+    return Player.NONE;
+  }
+
+
+
+
+  private Player getVerticalThreeRow() {
+    for (int y = height - 1; y >= 3; y--) {
+      for (int x = 0; x < width; x++) {
+        if (board[y][x] != Player.NONE &&
+                board[y][x] == board[y - 1][x] &&
+                board[y][x] == board[y - 2][x] &&
+                board[y - 3][x] == Player.NONE)
+        {
+          return board[y][x];
+        }
+      }
+    }
+
+    return Player.NONE;
+  }
+
+  public Player getThreeRower() {
+    return Stream.<Supplier<Player>>of(
+                    this::getVerticalThreeRow,
+                    this::getHorizontalThreeRow,
+                    this::getDiagonalThree45Row,
+                    this::getDiagonalThree315Row)
+            .map(Supplier::get)
+            .filter(p -> p != Player.NONE)
+            .findFirst()
+            .orElse(Player.NONE);
+  }
+
+  /// functions to find two connected pieces
+  private Player getVerticalTwoRow() {
+    for (int y = height - 1; y >= 3; y--) {
+      for (int x = 0; x < width; x++) {
+        if (board[y][x] != Player.NONE &&
+                board[y][x] == board[y - 1][x] &&
+                board[y - 2][x] == Player.NONE &&
+                board[y - 3][x] == Player.NONE) {
+          return board[y][x];
+        }
+      }
+    }
+    return Player.NONE;
+  }
+  private Player getHorizontalTwoRow() {
+    for (int x = 0; x < width - 3; x++) {
+      for (int y = height - 1; y >= 0; y--) {
+        if (board[y][x] != Player.NONE &&
+                board[y][x] == board[y][x + 1] &&
+                board[y][x + 2] == Player.NONE &&
+                board[y][x + 3] == Player.NONE)
+        {
+          return board[y][x];
+        }
+      }
+    }
+
+    return Player.NONE;
+  }
+
+  private Player getDiagonalTwo315Row() {
+    for (int y = height - 1; y >= 3; y--) {
+      for (int x = width - 1; x >= 3; x--) {
+        if (board[y][x] != Player.NONE &&
+                board[y][x] == board[y - 1][x - 1] &&
+                board[y - 2][x - 2] == Player.NONE &&
+                board[y - 3][x - 3] == Player.NONE
+        )
+        {
+          return board[y][x];
+        }
+      }
+    }
+    return Player.NONE;
+  }
+
+  private Player getDiagonalTwo45Row() {
+    for (int y = height - 1; y >= 3; y--) {
+      for (int x = 0; x < width - 3; x++) {
+        if (board[y][x] != Player.NONE &&
+                board[y][x] == board[y - 1][x + 1] &&
+                board[y - 2][x + 2] == Player.NONE&&
+                board[y - 3][x + 3] == Player.NONE
+        )
+        {
+          return board[y][x];
+        }
+      }
+    }
+
+    return Player.NONE;
+  }
+
+  public Player getTwoRower() {
+    return Stream.<Supplier<Player>>of(
+                    this::getVerticalTwoRow,
+                    this::getHorizontalTwoRow,
+                    this::getDiagonalTwo45Row,
+                    this::getDiagonalTwo315Row)
+            .map(Supplier::get)
+            .filter(p -> p != Player.NONE)
+            .findFirst()
+            .orElse(Player.NONE);
+  }
+
+
+
   @Override
   public boolean equals(Object other) {
     return other instanceof Board && Arrays.deepEquals(((Board) other).board, board);
