@@ -14,9 +14,9 @@ public class Main {
                 System.out.println(b.getWinner());
             }
 
-            System.out.println("Min Maxs Turn");
+            //System.out.println("Min Maxs Turn");
 
-            int gameMoveMinMax = new MyMinMaxAI().findBestMove(b, 5, Integer.MIN_VALUE, Integer.MAX_VALUE, true, Player.RED)[1];
+            int gameMoveMinMax = new MyMinMaxAI().findBestMove(b, 4, Integer.MIN_VALUE, Integer.MAX_VALUE, true, Player.RED)[1];
             Move gameMove = new Move(gameMoveMinMax);
 
 

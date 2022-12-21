@@ -9,7 +9,7 @@ public class MyMinMaxAI extends AI{
     public void start(Board b) {
         Player player = b.getCurrentPlayer();
         // depth = 5
-        findBestMove(b, 4, Integer.MIN_VALUE, Integer.MAX_VALUE, true, player);
+        findBestMove(b, 5, Integer.MIN_VALUE, Integer.MAX_VALUE, true, player);
     }
 
 
@@ -87,7 +87,7 @@ public class MyMinMaxAI extends AI{
         }
 
         int boardWidth = b.getWidth();
-        //setBestMove(new Move(boardWidth/2));
+        setBestMove(new Move(boardWidth/2));
 
         boolean isTerminal = isTerminalNode(b);
         if (isTerminal || depth == 0) {
@@ -106,10 +106,9 @@ public class MyMinMaxAI extends AI{
             }
 
         }
-        Move bestMove = new Move(boardWidth/2);
         if(isMax) {
             int value = Integer.MIN_VALUE;
-
+            Move bestMove = new Move(0);
             for (Move possibleMove: possibleMoves) {
                 Board board_copy = b;
                 board_copy = board_copy.executeMove(possibleMove);
@@ -120,16 +119,19 @@ public class MyMinMaxAI extends AI{
                     //setBestMove(bestMove);
                 }
                 alpha = Math.max(alpha, value);
+                /*
                 if (alpha >= beta) {
                     break;
                 }
 
+                 */
             }
-            setBestMove(bestMove);
+            setBestMove(new Move(bestMove.column));
             return new int[]{value, bestMove.column};
         }
         else {
             int value = Integer.MAX_VALUE;
+            Move bestMove = new Move(0);
             for (Move possibleMove: possibleMoves) {
                 Board board_copy = b;
                 board_copy = board_copy.executeMove(possibleMove);
@@ -140,17 +142,16 @@ public class MyMinMaxAI extends AI{
                     //setBestMove(bestMove);
                 }
                 alpha = Math.min(beta, value);
-
+                /*
                 if (alpha >= beta) {
                     break;
                 }
 
+                 */
             }
-            //setBestMove(new Move(bestMove.column));
-            setBestMove(bestMove);
+            setBestMove(new Move(bestMove.column));
             return new int[]{value, bestMove.column};
         }
-
     }
 
 

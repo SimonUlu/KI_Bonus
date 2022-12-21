@@ -9,7 +9,7 @@ public class MyMinMaxAI extends AI{
     public void start(Board b) {
         Player player = b.getCurrentPlayer();
         // depth = 5
-        findBestMove(b, 4, Integer.MIN_VALUE, Integer.MAX_VALUE, true, player);
+        findBestMove(b, 5, Integer.MIN_VALUE, Integer.MAX_VALUE, true, player);
     }
 
 
@@ -120,10 +120,12 @@ public class MyMinMaxAI extends AI{
                     //setBestMove(bestMove);
                 }
                 alpha = Math.max(alpha, value);
+                /*
                 if (alpha >= beta) {
                     break;
                 }
 
+                 */
             }
             setBestMove(bestMove);
             return new int[]{value, bestMove.column};
@@ -140,11 +142,12 @@ public class MyMinMaxAI extends AI{
                     //setBestMove(bestMove);
                 }
                 alpha = Math.min(beta, value);
-
+                /*
                 if (alpha >= beta) {
                     break;
                 }
 
+                 */
             }
             //setBestMove(new Move(bestMove.column));
             setBestMove(bestMove);

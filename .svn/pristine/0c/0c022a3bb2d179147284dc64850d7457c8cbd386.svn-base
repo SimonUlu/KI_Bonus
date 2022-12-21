@@ -9,7 +9,7 @@ public class MyMinMaxAI extends AI{
     public void start(Board b) {
         Player player = b.getCurrentPlayer();
         // depth = 5
-        findBestMove(b, 4, Integer.MIN_VALUE, Integer.MAX_VALUE, true, player);
+        findBestMove(b, 5, Integer.MIN_VALUE, Integer.MAX_VALUE, true, player);
     }
 
 
@@ -80,15 +80,11 @@ public class MyMinMaxAI extends AI{
 
     public int[] findBestMove(Board b, int depth, int alpha, int beta ,boolean isMax, Player myPlayer) {
         List<Move> possibleMoves = b.possibleMoves();
-        //setBestMove(makeRandomMove(b));
+        setBestMove(makeRandomMove(b));
         Player opponentPlayer = Player.BLUE;
         if (myPlayer == Player.BLUE) {
             opponentPlayer = Player.RED;
         }
-
-        int boardWidth = b.getWidth();
-        //setBestMove(new Move(boardWidth/2));
-
         boolean isTerminal = isTerminalNode(b);
         if (isTerminal || depth == 0) {
             if (isTerminal) {
@@ -106,10 +102,9 @@ public class MyMinMaxAI extends AI{
             }
 
         }
-        Move bestMove = new Move(boardWidth/2);
         if(isMax) {
             int value = Integer.MIN_VALUE;
-
+            Move bestMove = new Move(0);
             for (Move possibleMove: possibleMoves) {
                 Board board_copy = b;
                 board_copy = board_copy.executeMove(possibleMove);
@@ -117,19 +112,21 @@ public class MyMinMaxAI extends AI{
                 if (newScore > value) {
                     value = newScore;
                     bestMove = possibleMove;
-                    //setBestMove(bestMove);
+                    setBestMove(bestMove);
                 }
                 alpha = Math.max(alpha, value);
+                /*
                 if (alpha >= beta) {
                     break;
                 }
 
+                 */
             }
-            setBestMove(bestMove);
             return new int[]{value, bestMove.column};
         }
         else {
             int value = Integer.MAX_VALUE;
+            Move bestMove = new Move(0);
             for (Move possibleMove: possibleMoves) {
                 Board board_copy = b;
                 board_copy = board_copy.executeMove(possibleMove);
@@ -137,20 +134,18 @@ public class MyMinMaxAI extends AI{
                 if (newScore < value) {
                     value = newScore;
                     bestMove = possibleMove;
-                    //setBestMove(bestMove);
+                    setBestMove(bestMove);
                 }
                 alpha = Math.min(beta, value);
-
+                /*
                 if (alpha >= beta) {
                     break;
                 }
 
+                 */
             }
-            //setBestMove(new Move(bestMove.column));
-            setBestMove(bestMove);
             return new int[]{value, bestMove.column};
         }
-
     }
 
 

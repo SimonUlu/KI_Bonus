@@ -9,7 +9,7 @@ public class MyMinMaxAI extends AI{
     public void start(Board b) {
         Player player = b.getCurrentPlayer();
         // depth = 5
-        findBestMove(b, 4, Integer.MIN_VALUE, Integer.MAX_VALUE, true, player);
+        findBestMove(b, 5, Integer.MIN_VALUE, Integer.MAX_VALUE, true, player);
     }
 
 
@@ -23,40 +23,18 @@ public class MyMinMaxAI extends AI{
 
         if (b.getWinner() == myPlayer) {
             score += 10000;
-        }if (b.getThreeRower() == myPlayer) {
-            score += 20;
-        } if (b.getTwoRower() == myPlayer) {
-            score += 2;
+        } else if (b.getThreeRower() == myPlayer) {
+            score += 50;
+        } else if (b.getTwoRower() == myPlayer) {
+            score += 5;
         }
         if (b.getWinner() == opponentPlayer) {
             score -= -10000;
-        } if (b.getThreeRower() == opponentPlayer) {
-            score -= 20;
-        } if(b.getTwoRower() == opponentPlayer) {
-            score -= 2;
+        } else if (b.getThreeRower() == opponentPlayer) {
+            score -= 50;
+        } else if(b.getTwoRower() == opponentPlayer) {
+            score -= 5;
         }
-
-        /// specifically score 3 center columns
-
-        int width = b.getWidth();
-        int[] middleColumns =  new int[]{(width/2-1), width/2, (width/2+1)};
-        int centerCount = 0;
-
-        Player[][] boardState = b.getState();
-
-        for (int i = 0; i < boardState.length; i++) {
-            if (boardState[i][middleColumns[0]] == myPlayer) {
-                centerCount += 1;
-            }
-            if (boardState[i][middleColumns[1]] == myPlayer) {
-                centerCount += 1;
-            }
-            if (boardState[i][middleColumns[2]] == myPlayer) {
-                centerCount += 1;
-            }
-        }
-        score += centerCount;
-
 
         return score;
     }
@@ -80,15 +58,11 @@ public class MyMinMaxAI extends AI{
 
     public int[] findBestMove(Board b, int depth, int alpha, int beta ,boolean isMax, Player myPlayer) {
         List<Move> possibleMoves = b.possibleMoves();
-        //setBestMove(makeRandomMove(b));
+        setBestMove(makeRandomMove(b));
         Player opponentPlayer = Player.BLUE;
         if (myPlayer == Player.BLUE) {
             opponentPlayer = Player.RED;
         }
-
-        int boardWidth = b.getWidth();
-        //setBestMove(new Move(boardWidth/2));
-
         boolean isTerminal = isTerminalNode(b);
         if (isTerminal || depth == 0) {
             if (isTerminal) {
@@ -100,16 +74,15 @@ public class MyMinMaxAI extends AI{
                     return new int[]{0, -1};
                 }
             }
-            else {
+            if (depth == 0) {
                 //System.out.println(b);
                 return new int[]{evaluate(b, myPlayer), -1};
             }
 
         }
-        Move bestMove = new Move(boardWidth/2);
         if(isMax) {
             int value = Integer.MIN_VALUE;
-
+            Move bestMove = new Move(0);
             for (Move possibleMove: possibleMoves) {
                 Board board_copy = b;
                 board_copy = board_copy.executeMove(possibleMove);
@@ -117,19 +90,21 @@ public class MyMinMaxAI extends AI{
                 if (newScore > value) {
                     value = newScore;
                     bestMove = possibleMove;
-                    //setBestMove(bestMove);
+                    setBestMove(bestMove);
                 }
                 alpha = Math.max(alpha, value);
+                /*
                 if (alpha >= beta) {
                     break;
                 }
 
+                 */
             }
-            setBestMove(bestMove);
             return new int[]{value, bestMove.column};
         }
         else {
             int value = Integer.MAX_VALUE;
+            Move bestMove = new Move(0);
             for (Move possibleMove: possibleMoves) {
                 Board board_copy = b;
                 board_copy = board_copy.executeMove(possibleMove);
@@ -137,20 +112,18 @@ public class MyMinMaxAI extends AI{
                 if (newScore < value) {
                     value = newScore;
                     bestMove = possibleMove;
-                    //setBestMove(bestMove);
+                    setBestMove(bestMove);
                 }
                 alpha = Math.min(beta, value);
-
+                /*
                 if (alpha >= beta) {
                     break;
                 }
 
+                 */
             }
-            //setBestMove(new Move(bestMove.column));
-            setBestMove(bestMove);
             return new int[]{value, bestMove.column};
         }
-
     }
 
 

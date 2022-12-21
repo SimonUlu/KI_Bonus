@@ -18,7 +18,7 @@ public class MyMCTSAI extends AI {
     }
 
 
-    /// function to h simulate the opponent -- choose random move of possible game Moves
+    /// function to simulate the opponent -- choose random move of possible game Moves
 
     public Move makeRandomMove(Board b) {
         List<Move> possibleMoves = b.possibleMoves();
@@ -52,7 +52,10 @@ public class MyMCTSAI extends AI {
         Player[][] boardState = b.getState();
 
         // get Board Width
-        int boardWidth = b.getWidth();
+        int boardWidth = 0;
+        for (int i = 0; i < boardState[0].length; i++) {
+            boardWidth += 1;
+        }
         setBestMove(new Move(boardWidth/2));
         List <Move> possibleMoves = b.possibleMoves();
 
@@ -63,7 +66,7 @@ public class MyMCTSAI extends AI {
         for (Move possibleMove: possibleMoves) {
             b = b.executeMove(possibleMove);
             //winsTotal = new int[boardWidth];
-            for(int k = 0; k < 70; k++) {
+            for(int k = 0; k < 80; k++) {
                 winsTotal[possibleMove.column] += playRandomGame(b, player);
             }
             b = beforeBoard;
