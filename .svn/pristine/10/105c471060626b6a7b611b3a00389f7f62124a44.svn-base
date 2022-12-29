@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Board b = new Board(10, 10);
 
-        // new test
+
         while (b.possibleMoves().size() > 0 && b.getWinner() == Player.NONE) {
 
             if (b.getWinner() != Player.NONE) {
@@ -16,8 +16,7 @@ public class Main {
 
             //System.out.println("Min Maxs Turn");
 
-            int gameMoveMinMax = new MyMinMaxAI().findBestMove(b, 4, Integer.MIN_VALUE, Integer.MAX_VALUE, true, Player.RED)[1];
-            //int gameMoveMinMax = new TestMinMaxAI().findBestMove(b, 4, Integer.MIN_VALUE, Integer.MAX_VALUE, true, Player.RED)[1];
+            int gameMoveMinMax = new MyMinMaxAI().findBestMove(b, 3, Integer.MIN_VALUE, Integer.MAX_VALUE, true, Player.RED)[1];
             Move gameMove = new Move(gameMoveMinMax);
 
 

@@ -150,9 +150,8 @@ public class Board {
     return Player.NONE;
   }
 
-
-
   /*
+
   /// function to get 3 chips in a row
   private Player getDiagonalThree315Row() {
     for (int y = height - 1; y >= 3; y--) {
@@ -310,9 +309,7 @@ public class Board {
             .orElse(Player.NONE);
   }
 
-
    */
-
 
 
 

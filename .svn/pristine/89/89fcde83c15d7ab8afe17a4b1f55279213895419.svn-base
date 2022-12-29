@@ -5,12 +5,12 @@ package ki.jfour;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class TestMinMaxAI extends AI{
+public class MyMinMaxAI extends AI{
 
-    // start over - new test
+    // start over - new test depth 3 e
     public void start(Board b) {
         Player player = b.getCurrentPlayer();
-        // depth = 3 or 4 test
+        // depth = 3 or 4
         findBestMove(b, 4, Integer.MIN_VALUE, Integer.MAX_VALUE, true, player);
     }
 
@@ -25,7 +25,7 @@ public class TestMinMaxAI extends AI{
 
         if (b.getWinner() == myPlayer) {
             score += 10000;
-        } else if (getThreeRower(b) == myPlayer) {
+        }else if (getThreeRower(b) == myPlayer) {
             score += 20;
         } else if (getTwoRower(b) == myPlayer) {
             score += 2;
@@ -47,14 +47,14 @@ public class TestMinMaxAI extends AI{
 
         for (int i = 0; i < boardState.length; i++) {
             if (boardState[i][middleColumns[0]] == myPlayer) {
-                centerCount += 2;
+                centerCount += 1;
             }
 
             else if (boardState[i][middleColumns[1]] == myPlayer) {
-                centerCount += 2;
+                centerCount += 1;
             }
             else if (boardState[i][middleColumns[2]] == myPlayer) {
-                centerCount += 2;
+                centerCount += 1;
             }
 
         }
@@ -132,7 +132,6 @@ public class TestMinMaxAI extends AI{
                 }
                 alpha = Math.max(alpha, value);
                 if (alpha >= beta) {
-                    System.out.println("Alpha Cut");
                     break;
                 }
 
@@ -151,7 +150,8 @@ public class TestMinMaxAI extends AI{
                     bestMove = possibleMove;
                     //setBestMove(bestMove);
                 }
-                beta = Math.min(beta, value);
+                alpha = Math.min(beta, value);
+
                 if (alpha >= beta) {
                     break;
                 }
