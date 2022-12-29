@@ -32,10 +32,7 @@ public class Main {
             Move gameMoveMCT = new MyMCTSAI().findBestMonteMove(b, Player.BLUE);
             b = b.executeMove(gameMoveMCT);
             System.out.println(b);
-
-
         }
         System.out.println(b.getWinner());
-
     }
 }

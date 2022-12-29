@@ -78,26 +78,14 @@ public class MyMinMaxAI extends AI{
         return b.possibleMoves().size() == 0;
     }
 
-    /*
-    public Move makeRandomMove(Board b) {
-        List<Move> possibleMoves = b.possibleMoves();
-        Random random = new Random();
-        return possibleMoves.get(random.nextInt(possibleMoves.size()));
-    }
-
-     */
-
-
     public int[] findBestMove(Board b, int depth, int alpha, int beta ,boolean isMax, Player myPlayer) {
         List<Move> possibleMoves = b.possibleMoves();
-        //setBestMove(makeRandomMove(b));
         Player opponentPlayer = Player.BLUE;
         if (myPlayer == Player.BLUE) {
             opponentPlayer = Player.RED;
         }
 
         int boardWidth = getWidth(b);
-        //setBestMove(new Move(boardWidth/2));
 
         boolean isTerminal = isTerminalNode(b);
         if (isTerminal || depth == 0) {
@@ -111,7 +99,6 @@ public class MyMinMaxAI extends AI{
                 }
             }
             else {
-                //System.out.println(b);
                 return new int[]{evaluate(b, myPlayer), -1};
             }
 
@@ -127,7 +114,6 @@ public class MyMinMaxAI extends AI{
                 if (newScore > value) {
                     value = newScore;
                     bestMove = possibleMove;
-                    //setBestMove(bestMove);
                 }
                 alpha = Math.max(alpha, value);
                 if (alpha >= beta) {
@@ -147,7 +133,6 @@ public class MyMinMaxAI extends AI{
                 if (newScore < value) {
                     value = newScore;
                     bestMove = possibleMove;
-                    //setBestMove(bestMove);
                 }
                 beta = Math.min(beta, value);
                 if (alpha >= beta) {
@@ -155,7 +140,6 @@ public class MyMinMaxAI extends AI{
                 }
 
             }
-            //setBestMove(new Move(bestMove.column));
             setBestMove(bestMove);
             return new int[]{value, bestMove.column};
         }

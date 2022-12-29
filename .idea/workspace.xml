@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11ec98dc-b04a-45dd-8265-33b1731c427a" name="Changes" comment="" />
+    <list default="true" id="11ec98dc-b04a-45dd-8265-33b1731c427a" name="Changes" comment="Code clean-up after checking starting methods">
+      <change beforePath="$PROJECT_DIR$/src/ki/jfour/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ki/jfour/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,41 +126,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670319422083</updated>
-    </task>
-    <task id="LOCAL-00105" summary="Changed else if to if">
-      <created>1671640640029</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1671640640029</updated>
-    </task>
-    <task id="LOCAL-00106" summary="Priotize moves to the middle columns">
-      <created>1671641070030</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1671641070030</updated>
-    </task>
-    <task id="LOCAL-00107" summary="Priotize moves to the middle columns">
-      <created>1671641347032</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1671641347032</updated>
-    </task>
-    <task id="LOCAL-00108" summary="Priotize moves to the middle columns">
-      <created>1671641583029</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1671641583029</updated>
-    </task>
-    <task id="LOCAL-00109" summary="Limit depth to 4 and only 70 rounds">
-      <created>1671641690030</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1671641690030</updated>
     </task>
     <task id="LOCAL-00110" summary="Limit depth to 4 and only 70 rounds">
       <created>1671641818030</created>
@@ -468,7 +435,42 @@
       <option name="project" value="LOCAL" />
       <updated>1672331195028</updated>
     </task>
-    <option name="localTasksCounter" value="154" />
+    <task id="LOCAL-00154" summary="Two rower score +/- 20 and center only +/- 1">
+      <created>1672331401029</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1672331401029</updated>
+    </task>
+    <task id="LOCAL-00155" summary="Two rower score +/- 20 and center only +/- 1">
+      <created>1672331417024</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1672331417024</updated>
+    </task>
+    <task id="LOCAL-00156" summary="Two rower score +/- 20 and center only +/- 1">
+      <created>1672331473027</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1672331473028</updated>
+    </task>
+    <task id="LOCAL-00157" summary="Code clean-up after checking starting methods">
+      <created>1672332278029</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1672332278029</updated>
+    </task>
+    <task id="LOCAL-00158" summary="Code clean-up after checking starting methods">
+      <created>1672332405029</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1672332405029</updated>
+    </task>
+    <option name="localTasksCounter" value="159" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -493,17 +495,8 @@
     <MESSAGE value="delete else - if and make it to only if" />
     <MESSAGE value="Make score +/-2 when found 2 rower" />
     <MESSAGE value="Make center count equal to two rower" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make center count equal to two rower" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ki/jfour/Util.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Two rower score +/- 20 and center only +/- 1" />
+    <MESSAGE value="Code clean-up after checking starting methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code clean-up after checking starting methods" />
   </component>
 </project>
