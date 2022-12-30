@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11ec98dc-b04a-45dd-8265-33b1731c427a" name="Changes" comment="Code clean-up after checking starting methods">
-      <change beforePath="$PROJECT_DIR$/src/ki/jfour/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ki/jfour/Main.java" afterDir="false" />
+    <list default="true" id="11ec98dc-b04a-45dd-8265-33b1731c427a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/ki/jfour/MyMinMaxAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ki/jfour/MyMinMaxAI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,376 +127,378 @@
       <option name="presentableId" value="Default" />
       <updated>1670319422083</updated>
     </task>
-    <task id="LOCAL-00110" summary="Limit depth to 4 and only 70 rounds">
-      <created>1671641818030</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
+    <task id="LOCAL-00172" summary="set to 80 runs &amp; set centercount to 1 and tworower to 4">
+      <created>1672410088029</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
       <option name="project" value="LOCAL" />
-      <updated>1671641818030</updated>
+      <updated>1672410088029</updated>
     </task>
-    <task id="LOCAL-00111" summary="Only call bestmove at the end">
-      <created>1671641923028</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
+    <task id="LOCAL-00173" summary="set to 75 runs &amp; set centercount to 1 and tworower to 4">
+      <created>1672410163034</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
       <option name="project" value="LOCAL" />
-      <updated>1671641923028</updated>
+      <updated>1672410163034</updated>
     </task>
-    <task id="LOCAL-00112" summary="Only call bestmove at the end">
-      <created>1671642196029</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
+    <task id="LOCAL-00174" summary="set to 75 runs &amp; set centercount to 1 and tworower to 4">
+      <created>1672410370028</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
       <option name="project" value="LOCAL" />
-      <updated>1671642196029</updated>
+      <updated>1672410370028</updated>
     </task>
-    <task id="LOCAL-00113" summary="Only call bestmove at the end">
-      <created>1671642397033</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
+    <task id="LOCAL-00175" summary="set centercount to 1 and tworower to 5 threerower to 40">
+      <created>1672410484028</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
       <option name="project" value="LOCAL" />
-      <updated>1671642397033</updated>
+      <updated>1672410484028</updated>
     </task>
-    <task id="LOCAL-00114" summary="Only call bestmove at the end">
-      <created>1671642541030</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
+    <task id="LOCAL-00176" summary="set centercount to 1 and tworower to 5 threerower to 40">
+      <created>1672410565030</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
       <option name="project" value="LOCAL" />
-      <updated>1671642541030</updated>
+      <updated>1672410565030</updated>
     </task>
-    <task id="LOCAL-00115" summary="Only call bestmove at the end">
-      <created>1671642846031</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
+    <task id="LOCAL-00177" summary="set centercount to 1 and tworower to 5 threerower to 40">
+      <created>1672410629027</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
       <option name="project" value="LOCAL" />
-      <updated>1671642846032</updated>
+      <updated>1672410629027</updated>
     </task>
-    <task id="LOCAL-00116" summary="Only call bestmove at the end">
-      <created>1671642919030</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
+    <task id="LOCAL-00178" summary="set centercount to 1 and tworower to 5 threerower to 40">
+      <created>1672410687029</created>
+      <option name="number" value="00178" />
+      <option name="presentableId" value="LOCAL-00178" />
       <option name="project" value="LOCAL" />
-      <updated>1671642919030</updated>
+      <updated>1672410687029</updated>
     </task>
-    <task id="LOCAL-00117" summary="Only call bestmove at the end">
-      <created>1671643034030</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
+    <task id="LOCAL-00179" summary="set centercount to 1 and tworower to 2 threerower to 20">
+      <created>1672410786029</created>
+      <option name="number" value="00179" />
+      <option name="presentableId" value="LOCAL-00179" />
       <option name="project" value="LOCAL" />
-      <updated>1671643034030</updated>
+      <updated>1672410786029</updated>
     </task>
-    <task id="LOCAL-00118" summary="Move functions from class board to child classes">
-      <created>1672318807032</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
+    <task id="LOCAL-00180" summary="set centercount to 1 and tworower to 2 threerower to 20">
+      <created>1672410863026</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
       <option name="project" value="LOCAL" />
-      <updated>1672318807033</updated>
+      <updated>1672410863026</updated>
     </task>
-    <task id="LOCAL-00119" summary="Move functions from class board to child classes">
-      <created>1672318909031</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
+    <task id="LOCAL-00181" summary="set montecarlo runs to 250">
+      <created>1672410984027</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
       <option name="project" value="LOCAL" />
-      <updated>1672318909031</updated>
+      <updated>1672410984027</updated>
     </task>
-    <task id="LOCAL-00120" summary="Move functions from class board to child classes">
-      <created>1672319004031</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
+    <task id="LOCAL-00182" summary="set montecarlo runs to 150">
+      <created>1672411044030</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
       <option name="project" value="LOCAL" />
-      <updated>1672319004031</updated>
+      <updated>1672411044030</updated>
     </task>
-    <task id="LOCAL-00121" summary="Move functions from class board to child classes">
-      <created>1672319066026</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
+    <task id="LOCAL-00183" summary="set montecarlo runs to 150">
+      <created>1672411165028</created>
+      <option name="number" value="00183" />
+      <option name="presentableId" value="LOCAL-00183" />
       <option name="project" value="LOCAL" />
-      <updated>1672319066026</updated>
+      <updated>1672411165028</updated>
     </task>
-    <task id="LOCAL-00122" summary="Change depth to 3 because slower functions">
-      <created>1672319145029</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
+    <task id="LOCAL-00184" summary="set montecarlo runs to 120">
+      <created>1672411241027</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
       <option name="project" value="LOCAL" />
-      <updated>1672319145029</updated>
+      <updated>1672411241027</updated>
     </task>
-    <task id="LOCAL-00123" summary="Change depth to 3 because slower functions">
-      <created>1672319218029</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
+    <task id="LOCAL-00185" summary="set montecarlo runs to 120 - run 2">
+      <created>1672411269028</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
       <option name="project" value="LOCAL" />
-      <updated>1672319218029</updated>
+      <updated>1672411269029</updated>
     </task>
-    <task id="LOCAL-00124" summary="Change depth to 3 because slower functions">
-      <created>1672319356031</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
+    <task id="LOCAL-00186" summary="set montecarlo runs to 120 - run 3">
+      <created>1672411310030</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
       <option name="project" value="LOCAL" />
-      <updated>1672319356031</updated>
+      <updated>1672411310030</updated>
     </task>
-    <task id="LOCAL-00125" summary="Change depth to 3 because slower functions">
-      <created>1672319419033</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
+    <task id="LOCAL-00187" summary="set montecarlo runs to 100 - run 1">
+      <created>1672411332029</created>
+      <option name="number" value="00187" />
+      <option name="presentableId" value="LOCAL-00187" />
       <option name="project" value="LOCAL" />
-      <updated>1672319419033</updated>
+      <updated>1672411332029</updated>
     </task>
-    <task id="LOCAL-00126" summary="Change depth to 4 because slower functions">
-      <created>1672319488028</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
+    <task id="LOCAL-00188" summary="set montecarlo runs to 100 - run 2">
+      <created>1672411344029</created>
+      <option name="number" value="00188" />
+      <option name="presentableId" value="LOCAL-00188" />
       <option name="project" value="LOCAL" />
-      <updated>1672319488028</updated>
+      <updated>1672411344029</updated>
     </task>
-    <task id="LOCAL-00127" summary="Change depth to 4 because slower functions - new test - to slow ?">
-      <created>1672319529029</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
+    <task id="LOCAL-00189" summary="set montecarlo runs to 100 - run 3">
+      <created>1672411369029</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
       <option name="project" value="LOCAL" />
-      <updated>1672319529029</updated>
+      <updated>1672411369029</updated>
     </task>
-    <task id="LOCAL-00128" summary="changed test back to 3 because to slow">
-      <created>1672319559065</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
+    <task id="LOCAL-00190" summary="set montecarlo runs to 100 - run 1">
+      <created>1672411424031</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
       <option name="project" value="LOCAL" />
-      <updated>1672319559065</updated>
+      <updated>1672411424031</updated>
     </task>
-    <task id="LOCAL-00129" summary="changed test back to 3 because to slow">
-      <created>1672319612058</created>
-      <option name="number" value="00129" />
-      <option name="presentableId" value="LOCAL-00129" />
+    <task id="LOCAL-00191" summary="set montecarlo runs to 100 - run 2">
+      <created>1672411433027</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
       <option name="project" value="LOCAL" />
-      <updated>1672319612058</updated>
+      <updated>1672411433027</updated>
     </task>
-    <task id="LOCAL-00130" summary="changed test back to 3 because to slow">
-      <created>1672319677031</created>
-      <option name="number" value="00130" />
-      <option name="presentableId" value="LOCAL-00130" />
+    <task id="LOCAL-00192" summary="set montecarlo runs to 100 - run 3">
+      <created>1672411443029</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
       <option name="project" value="LOCAL" />
-      <updated>1672319677031</updated>
+      <updated>1672411443029</updated>
     </task>
-    <task id="LOCAL-00131" summary="changed test back to 3 because to slow">
-      <created>1672319741030</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
+    <task id="LOCAL-00193" summary="set montecarlo runs to 70 - run 1">
+      <created>1672411562028</created>
+      <option name="number" value="00193" />
+      <option name="presentableId" value="LOCAL-00193" />
       <option name="project" value="LOCAL" />
-      <updated>1672319741030</updated>
+      <updated>1672411562028</updated>
     </task>
-    <task id="LOCAL-00132" summary="changed test back to 3 because to slow">
-      <created>1672319800034</created>
-      <option name="number" value="00132" />
-      <option name="presentableId" value="LOCAL-00132" />
+    <task id="LOCAL-00194" summary="set montecarlo runs to 70 - run 2">
+      <created>1672411569025</created>
+      <option name="number" value="00194" />
+      <option name="presentableId" value="LOCAL-00194" />
       <option name="project" value="LOCAL" />
-      <updated>1672319800034</updated>
+      <updated>1672411569025</updated>
     </task>
-    <task id="LOCAL-00133" summary="changed test back to 3 because to slow">
-      <created>1672319967036</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
+    <task id="LOCAL-00195" summary="set montecarlo runs to 70 - run 3">
+      <created>1672411585030</created>
+      <option name="number" value="00195" />
+      <option name="presentableId" value="LOCAL-00195" />
       <option name="project" value="LOCAL" />
-      <updated>1672319967036</updated>
+      <updated>1672411585030</updated>
     </task>
-    <task id="LOCAL-00134" summary="changed test back to 3 because to slow">
-      <created>1672320038032</created>
-      <option name="number" value="00134" />
-      <option name="presentableId" value="LOCAL-00134" />
+    <task id="LOCAL-00196" summary="set montecarlo runs to 70 - run 4">
+      <created>1672411851028</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
       <option name="project" value="LOCAL" />
-      <updated>1672320038032</updated>
+      <updated>1672411851028</updated>
     </task>
-    <task id="LOCAL-00135" summary="Replaced with enhanced for loop">
-      <created>1672320193030</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
+    <task id="LOCAL-00197" summary="set montecarlo runs to 70 - run 4">
+      <created>1672411918030</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
       <option name="project" value="LOCAL" />
-      <updated>1672320193030</updated>
+      <updated>1672411918030</updated>
     </task>
-    <task id="LOCAL-00136" summary="Optimize speed">
-      <created>1672320327029</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
+    <task id="LOCAL-00198" summary="set montecarlo runs to 60 - run 4">
+      <created>1672412062032</created>
+      <option name="number" value="00198" />
+      <option name="presentableId" value="LOCAL-00198" />
       <option name="project" value="LOCAL" />
-      <updated>1672320327029</updated>
+      <updated>1672412062032</updated>
     </task>
-    <task id="LOCAL-00137" summary="Optimize speed">
-      <created>1672320374031</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
+    <task id="LOCAL-00199" summary="set montecarlo runs to 60 - run 4">
+      <created>1672412211026</created>
+      <option name="number" value="00199" />
+      <option name="presentableId" value="LOCAL-00199" />
       <option name="project" value="LOCAL" />
-      <updated>1672320374031</updated>
+      <updated>1672412211026</updated>
     </task>
-    <task id="LOCAL-00138" summary="Only check middle column">
-      <created>1672320392028</created>
-      <option name="number" value="00138" />
-      <option name="presentableId" value="LOCAL-00138" />
+    <task id="LOCAL-00200" summary="set montecarlo runs to 100 - run 1">
+      <created>1672412270026</created>
+      <option name="number" value="00200" />
+      <option name="presentableId" value="LOCAL-00200" />
       <option name="project" value="LOCAL" />
-      <updated>1672320392028</updated>
+      <updated>1672412270026</updated>
     </task>
-    <task id="LOCAL-00139" summary="Set depth to 4">
-      <created>1672320530027</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
+    <task id="LOCAL-00201" summary="set montecarlo runs to 80 - run 1">
+      <created>1672412368028</created>
+      <option name="number" value="00201" />
+      <option name="presentableId" value="LOCAL-00201" />
       <option name="project" value="LOCAL" />
-      <updated>1672320530027</updated>
+      <updated>1672412368028</updated>
     </task>
-    <task id="LOCAL-00140" summary="call setbestmove earlier often did not work">
-      <created>1672320934029</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
+    <task id="LOCAL-00202" summary="set montecarlo runs to 80 - run 2">
+      <created>1672412389027</created>
+      <option name="number" value="00202" />
+      <option name="presentableId" value="LOCAL-00202" />
       <option name="project" value="LOCAL" />
-      <updated>1672320934029</updated>
+      <updated>1672412389027</updated>
     </task>
-    <task id="LOCAL-00141" summary="call setbestmove earlier often did not work">
-      <created>1672321000027</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
+    <task id="LOCAL-00203" summary="set montecarlo runs to 80 - run 3">
+      <created>1672412454031</created>
+      <option name="number" value="00203" />
+      <option name="presentableId" value="LOCAL-00203" />
       <option name="project" value="LOCAL" />
-      <updated>1672321000027</updated>
+      <updated>1672412454031</updated>
     </task>
-    <task id="LOCAL-00142" summary="Center col score 1 - three rower score 30">
-      <created>1672329374031</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
+    <task id="LOCAL-00204" summary="set montecarlo runs to 80 - run 4">
+      <created>1672412468029</created>
+      <option name="number" value="00204" />
+      <option name="presentableId" value="LOCAL-00204" />
       <option name="project" value="LOCAL" />
-      <updated>1672329374031</updated>
+      <updated>1672412468029</updated>
     </task>
-    <task id="LOCAL-00143" summary="Center col score 1 - three rower score 30">
-      <created>1672329452060</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
+    <task id="LOCAL-00205" summary="set montecarlo runs to 80 - run 5">
+      <created>1672412545028</created>
+      <option name="number" value="00205" />
+      <option name="presentableId" value="LOCAL-00205" />
       <option name="project" value="LOCAL" />
-      <updated>1672329452060</updated>
+      <updated>1672412545028</updated>
     </task>
-    <task id="LOCAL-00144" summary="Center col score 1 - three rower score 30">
-      <created>1672329812030</created>
-      <option name="number" value="00144" />
-      <option name="presentableId" value="LOCAL-00144" />
+    <task id="LOCAL-00206" summary="set montecarlo runs to 80 - run 6">
+      <created>1672412554026</created>
+      <option name="number" value="00206" />
+      <option name="presentableId" value="LOCAL-00206" />
       <option name="project" value="LOCAL" />
-      <updated>1672329812030</updated>
+      <updated>1672412554026</updated>
     </task>
-    <task id="LOCAL-00145" summary="Center col score 1 - three rower score 30">
-      <created>1672329902031</created>
-      <option name="number" value="00145" />
-      <option name="presentableId" value="LOCAL-00145" />
+    <task id="LOCAL-00207" summary="set montecarlo runs to 150 and update best move">
+      <created>1672416935026</created>
+      <option name="number" value="00207" />
+      <option name="presentableId" value="LOCAL-00207" />
       <option name="project" value="LOCAL" />
-      <updated>1672329902031</updated>
+      <updated>1672416935027</updated>
     </task>
-    <task id="LOCAL-00146" summary="Center col score 1 - three rower score 30">
-      <created>1672329973032</created>
-      <option name="number" value="00146" />
-      <option name="presentableId" value="LOCAL-00146" />
+    <task id="LOCAL-00208" summary="set montecarlo runs to 150 and update best move">
+      <created>1672416944026</created>
+      <option name="number" value="00208" />
+      <option name="presentableId" value="LOCAL-00208" />
       <option name="project" value="LOCAL" />
-      <updated>1672329973032</updated>
+      <updated>1672416944026</updated>
     </task>
-    <task id="LOCAL-00147" summary="change depth to 3 while using Boards methods">
-      <created>1672330008028</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
+    <task id="LOCAL-00209" summary="set montecarlo runs to 150 and update best move">
+      <created>1672416955027</created>
+      <option name="number" value="00209" />
+      <option name="presentableId" value="LOCAL-00209" />
       <option name="project" value="LOCAL" />
-      <updated>1672330008028</updated>
+      <updated>1672416955027</updated>
     </task>
-    <task id="LOCAL-00148" summary="Fixed alpha beta cut - bug">
-      <created>1672330697049</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
+    <task id="LOCAL-00210" summary="set montecarlo runs to 120 and update best move">
+      <created>1672417011028</created>
+      <option name="number" value="00210" />
+      <option name="presentableId" value="LOCAL-00210" />
       <option name="project" value="LOCAL" />
-      <updated>1672330697049</updated>
+      <updated>1672417011028</updated>
     </task>
-    <task id="LOCAL-00149" summary="Fixed alpha beta cut - bug">
-      <created>1672330781031</created>
-      <option name="number" value="00149" />
-      <option name="presentableId" value="LOCAL-00149" />
+    <task id="LOCAL-00211" summary="set montecarlo runs to 100 and update best move">
+      <created>1672417041028</created>
+      <option name="number" value="00211" />
+      <option name="presentableId" value="LOCAL-00211" />
       <option name="project" value="LOCAL" />
-      <updated>1672330781031</updated>
+      <updated>1672417041028</updated>
     </task>
-    <task id="LOCAL-00150" summary="Fixed alpha beta cut - bug">
-      <created>1672330840027</created>
-      <option name="number" value="00150" />
-      <option name="presentableId" value="LOCAL-00150" />
+    <task id="LOCAL-00212" summary="set montecarlo runs to 120 and update best move">
+      <created>1672417095025</created>
+      <option name="number" value="00212" />
+      <option name="presentableId" value="LOCAL-00212" />
       <option name="project" value="LOCAL" />
-      <updated>1672330840027</updated>
+      <updated>1672417095025</updated>
     </task>
-    <task id="LOCAL-00151" summary="delete else - if and make it to only if">
-      <created>1672330929029</created>
-      <option name="number" value="00151" />
-      <option name="presentableId" value="LOCAL-00151" />
+    <task id="LOCAL-00213" summary="set montecarlo runs to 120 and update best move">
+      <created>1672417102027</created>
+      <option name="number" value="00213" />
+      <option name="presentableId" value="LOCAL-00213" />
       <option name="project" value="LOCAL" />
-      <updated>1672330929029</updated>
+      <updated>1672417102027</updated>
     </task>
-    <task id="LOCAL-00152" summary="Make score +/-2 when found 2 rower">
-      <created>1672331101032</created>
-      <option name="number" value="00152" />
-      <option name="presentableId" value="LOCAL-00152" />
+    <task id="LOCAL-00214" summary="set montecarlo runs to 120 and update best move">
+      <created>1672417114045</created>
+      <option name="number" value="00214" />
+      <option name="presentableId" value="LOCAL-00214" />
       <option name="project" value="LOCAL" />
-      <updated>1672331101032</updated>
+      <updated>1672417114045</updated>
     </task>
-    <task id="LOCAL-00153" summary="Make center count equal to two rower">
-      <created>1672331195028</created>
-      <option name="number" value="00153" />
-      <option name="presentableId" value="LOCAL-00153" />
+    <task id="LOCAL-00215" summary="set montecarlo runs to 120 and update best move">
+      <created>1672417199028</created>
+      <option name="number" value="00215" />
+      <option name="presentableId" value="LOCAL-00215" />
       <option name="project" value="LOCAL" />
-      <updated>1672331195028</updated>
+      <updated>1672417199028</updated>
     </task>
-    <task id="LOCAL-00154" summary="Two rower score +/- 20 and center only +/- 1">
-      <created>1672331401029</created>
-      <option name="number" value="00154" />
-      <option name="presentableId" value="LOCAL-00154" />
+    <task id="LOCAL-00216" summary="set montecarlo runs to 90 and not update">
+      <created>1672417262025</created>
+      <option name="number" value="00216" />
+      <option name="presentableId" value="LOCAL-00216" />
       <option name="project" value="LOCAL" />
-      <updated>1672331401029</updated>
+      <updated>1672417262025</updated>
     </task>
-    <task id="LOCAL-00155" summary="Two rower score +/- 20 and center only +/- 1">
-      <created>1672331417024</created>
-      <option name="number" value="00155" />
-      <option name="presentableId" value="LOCAL-00155" />
+    <task id="LOCAL-00217" summary="set montecarlo runs to 90 and not update">
+      <created>1672417286032</created>
+      <option name="number" value="00217" />
+      <option name="presentableId" value="LOCAL-00217" />
       <option name="project" value="LOCAL" />
-      <updated>1672331417024</updated>
+      <updated>1672417286032</updated>
     </task>
-    <task id="LOCAL-00156" summary="Two rower score +/- 20 and center only +/- 1">
-      <created>1672331473027</created>
-      <option name="number" value="00156" />
-      <option name="presentableId" value="LOCAL-00156" />
+    <task id="LOCAL-00218" summary="set montecarlo runs to 90 and not update">
+      <created>1672417295031</created>
+      <option name="number" value="00218" />
+      <option name="presentableId" value="LOCAL-00218" />
       <option name="project" value="LOCAL" />
-      <updated>1672331473028</updated>
+      <updated>1672417295031</updated>
     </task>
-    <task id="LOCAL-00157" summary="Code clean-up after checking starting methods">
-      <created>1672332278029</created>
-      <option name="number" value="00157" />
-      <option name="presentableId" value="LOCAL-00157" />
+    <task id="LOCAL-00219" summary="montecarlo 90 - minmax 3-2">
+      <created>1672417465031</created>
+      <option name="number" value="00219" />
+      <option name="presentableId" value="LOCAL-00219" />
       <option name="project" value="LOCAL" />
-      <updated>1672332278029</updated>
+      <updated>1672417465031</updated>
     </task>
-    <task id="LOCAL-00158" summary="Code clean-up after checking starting methods">
-      <created>1672332405029</created>
-      <option name="number" value="00158" />
-      <option name="presentableId" value="LOCAL-00158" />
+    <task id="LOCAL-00220" summary="montecarlo 90 - minmax 3-2">
+      <created>1672417481031</created>
+      <option name="number" value="00220" />
+      <option name="presentableId" value="LOCAL-00220" />
       <option name="project" value="LOCAL" />
-      <updated>1672332405029</updated>
+      <updated>1672417481031</updated>
     </task>
-    <option name="localTasksCounter" value="159" />
+    <option name="localTasksCounter" value="221" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Stuff" />
-    <MESSAGE value="Changed else if to if" />
-    <MESSAGE value="Priotize moves to the middle columns" />
-    <MESSAGE value="Limit depth to 4 and only 70 rounds" />
-    <MESSAGE value="Only call bestmove at the end" />
-    <MESSAGE value="Move functions from class board to child classes" />
-    <MESSAGE value="Change depth to 3 because slower functions" />
-    <MESSAGE value="Change depth to 4 because slower functions" />
-    <MESSAGE value="Change depth to 4 because slower functions - new test - to slow ?" />
-    <MESSAGE value="changed test back to 3 because to slow" />
-    <MESSAGE value="Replaced with enhanced for loop" />
-    <MESSAGE value="Optimize speed" />
-    <MESSAGE value="Only check middle column" />
-    <MESSAGE value="Set depth to 4" />
-    <MESSAGE value="call setbestmove earlier often did not work" />
-    <MESSAGE value="Center col score 1 - three rower score 30" />
-    <MESSAGE value="change depth to 3 while using Boards methods" />
-    <MESSAGE value="Fixed alpha beta cut - bug" />
-    <MESSAGE value="delete else - if and make it to only if" />
-    <MESSAGE value="Make score +/-2 when found 2 rower" />
-    <MESSAGE value="Make center count equal to two rower" />
-    <MESSAGE value="Two rower score +/- 20 and center only +/- 1" />
-    <MESSAGE value="Code clean-up after checking starting methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code clean-up after checking starting methods" />
+    <MESSAGE value="set centercount to 1 and tworower to 2 threerower to 20" />
+    <MESSAGE value="set montecarlo runs to 250" />
+    <MESSAGE value="set montecarlo runs to 150" />
+    <MESSAGE value="set montecarlo runs to 120" />
+    <MESSAGE value="set montecarlo runs to 120 - run 2" />
+    <MESSAGE value="set montecarlo runs to 120 - run 3" />
+    <MESSAGE value="set montecarlo runs to 100 - run 2" />
+    <MESSAGE value="set montecarlo runs to 100 - run 3" />
+    <MESSAGE value="set montecarlo runs to 70 - run 1" />
+    <MESSAGE value="set montecarlo runs to 70 - run 2" />
+    <MESSAGE value="set montecarlo runs to 70 - run 3" />
+    <MESSAGE value="set montecarlo runs to 70 - run 4" />
+    <MESSAGE value="set montecarlo runs to 60 - run 4" />
+    <MESSAGE value="set montecarlo runs to 100 - run 1" />
+    <MESSAGE value="set montecarlo runs to 80 - run 1" />
+    <MESSAGE value="set montecarlo runs to 80 - run 2" />
+    <MESSAGE value="set montecarlo runs to 80 - run 3" />
+    <MESSAGE value="set montecarlo runs to 80 - run 4" />
+    <MESSAGE value="set montecarlo runs to 80 - run 5" />
+    <MESSAGE value="set montecarlo runs to 80 - run 6" />
+    <MESSAGE value="set montecarlo runs to 150 and update best move" />
+    <MESSAGE value="set montecarlo runs to 100 and update best move" />
+    <MESSAGE value="set montecarlo runs to 120 and update best move" />
+    <MESSAGE value="set montecarlo runs to 90 and not update" />
+    <MESSAGE value="montecarlo 90 - minmax 3-2" />
+    <option name="LAST_COMMIT_MESSAGE" value="montecarlo 90 - minmax 3-2" />
   </component>
 </project>

@@ -9,7 +9,7 @@ public class MyMCTSAI extends AI {
 
     @Override
     public void start(Board b) {
-        // make Method find best move - new test y
+        // make Method find best move
         Player player = b.getCurrentPlayer();
         findBestMonteMove(b, player);
     }
@@ -43,7 +43,7 @@ public class MyMCTSAI extends AI {
     // refactor this function to possible Moves
     public Move findBestMonteMove(Board b, Player player) {
 
-        // get Current Board State - 2
+        // get Current Board State
         Player[][] boardState = b.getState();
 
         // get Board Width
@@ -58,12 +58,12 @@ public class MyMCTSAI extends AI {
         for (Move possibleMove: possibleMoves) {
             b = b.executeMove(possibleMove);
             //winsTotal = new int[boardWidth];
-            for(int k = 0; k < 90; k++) {
+            for(int k = 0; k < 150; k++) {
                 winsTotal[possibleMove.column] += playRandomGame(b, player);
             }
             b = beforeBoard;
-            //int selectedRow = getBestValue(winsTotal);
-            //setBestMove(new Move(selectedRow));
+            int selectedRow = getBestValue(winsTotal);
+            setBestMove(new Move(selectedRow));
         }
         //System.out.println(Arrays.toString(winsTotal));
         int selectedRow = getBestValue(winsTotal);
@@ -84,6 +84,7 @@ public class MyMCTSAI extends AI {
 
     /// not so simple heuristic
     public int evaluate(Board b, int step, Player player) {
+
         Player opponent = Player.RED;
         //System.out.println(b.getCurrentPlayer());
         if (player == Player.RED) {

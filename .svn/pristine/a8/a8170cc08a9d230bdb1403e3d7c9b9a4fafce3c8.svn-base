@@ -7,10 +7,10 @@ import java.util.stream.Stream;
 
 public class MyMinMaxAI extends AI{
 
-    // start over test 2 -
+    // start over - new test
     public void start(Board b) {
         Player player = b.getCurrentPlayer();
-        // depth = 3 or 4 test 3
+        // depth = 3 or 4 test
         findBestMove(b, 4, Integer.MIN_VALUE, Integer.MAX_VALUE, true, player);
     }
 

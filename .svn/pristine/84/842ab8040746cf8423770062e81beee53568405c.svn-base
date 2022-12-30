@@ -7,10 +7,10 @@ import java.util.stream.Stream;
 
 public class MyMinMaxAI extends AI{
 
-    // start over test 2 -
+    // start over lo
     public void start(Board b) {
         Player player = b.getCurrentPlayer();
-        // depth = 3 or 4 test 3
+        // depth = 3 or 4 test
         findBestMove(b, 4, Integer.MIN_VALUE, Integer.MAX_VALUE, true, player);
     }
 
@@ -26,16 +26,16 @@ public class MyMinMaxAI extends AI{
         if (b.getWinner() == myPlayer) {
             score += 10000;
         } else if (getThreeRower(b) == myPlayer) {
-            score += 20;
+            score += 40;
         } else if (getTwoRower(b) == myPlayer) {
-            score += 3;
+            score += 5;
         }
         if (b.getWinner() == opponentPlayer) {
             score -= -10000;
         } else if (getThreeRower(b) == opponentPlayer) {
-            score -= 20;
+            score -= 40;
         } else if(getTwoRower(b) == opponentPlayer) {
-            score -= 3;
+            score -= 5;
         }
 
         /// specifically score 3 center columns

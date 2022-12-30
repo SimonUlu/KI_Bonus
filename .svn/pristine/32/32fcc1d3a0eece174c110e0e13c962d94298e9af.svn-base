@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 
 public class MyMinMaxAI extends AI{
 
-    // start over test 2 -
+    // start over test 2
     public void start(Board b) {
         Player player = b.getCurrentPlayer();
         // depth = 3 or 4 test 3
@@ -28,14 +28,14 @@ public class MyMinMaxAI extends AI{
         } else if (getThreeRower(b) == myPlayer) {
             score += 20;
         } else if (getTwoRower(b) == myPlayer) {
-            score += 3;
+            score += 2;
         }
         if (b.getWinner() == opponentPlayer) {
             score -= -10000;
         } else if (getThreeRower(b) == opponentPlayer) {
             score -= 20;
         } else if(getTwoRower(b) == opponentPlayer) {
-            score -= 3;
+            score -= 2;
         }
 
         /// specifically score 3 center columns
@@ -47,13 +47,13 @@ public class MyMinMaxAI extends AI{
 
         for (int i = 0; i < boardState.length; i++) {
             if (boardState[i][middleColumns[0]] == myPlayer) {
-                centerCount += 2;
+                centerCount += 1;
             }
             if (boardState[i][middleColumns[1]] == myPlayer) {
-                centerCount += 2;
+                centerCount += 1;
             }
             if (boardState[i][middleColumns[2]] == myPlayer) {
-                centerCount += 2;
+                centerCount += 1;
             }
 
         }

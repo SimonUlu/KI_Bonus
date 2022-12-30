@@ -9,7 +9,7 @@ public class MyMCTSAI extends AI {
 
     @Override
     public void start(Board b) {
-        // make Method find best move - new test y
+        // make Method find best move - new testn x
         Player player = b.getCurrentPlayer();
         findBestMonteMove(b, player);
     }

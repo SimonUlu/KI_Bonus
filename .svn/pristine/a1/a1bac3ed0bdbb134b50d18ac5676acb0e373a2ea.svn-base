@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 
 public class MyMinMaxAI extends AI{
 
-    // start over test 2 -
+    // start over test 2 - 7
     public void start(Board b) {
         Player player = b.getCurrentPlayer();
         // depth = 3 or 4 test 3
